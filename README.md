@@ -1,17 +1,17 @@
 # Airline Satisfaction Regression Analysis
 
 ## Overview
-This project explores airline passenger satisfaction using a machine learning regression-style workflow. It loads survey data, preprocesses mixed categorical and numeric features, and evaluates a Random Forest regressor on a satisfaction target. This repository is preserved as an earlier modeling experiment related to the more polished airline satisfaction classification projects.
+I used this project to explore airline passenger satisfaction using a machine learning regression-style workflow. It loads survey data, preprocesses mixed categorical and numeric features, and evaluates a Random Forest regressor on a satisfaction target. I preserve this repository as an earlier modeling experiment related to the more polished airline satisfaction classification projects.
 
 ## Motivation
-The project demonstrates experimentation with preprocessing pipelines, feature encoding, and model evaluation on tabular survey data. It is useful as a learning artifact because it shows the difference between framing satisfaction as a regression problem and framing it as classification.
+I use the project to demonstrate experimentation with preprocessing pipelines, feature encoding, and model evaluation on tabular survey data. It is useful as a learning artifact because it shows the difference between framing satisfaction as a regression problem and framing it as classification.
 
 ## Dataset
 - **Source:** Kaggle Airline Passenger Satisfaction dataset.
 - **File:** `data/airline_satisfaction.csv`
 - **Target variable:** `satisfaction`.
 - **Important features:** demographic fields, travel type, cabin class, flight distance, delay fields, and service ratings.
-- **Dataset size:** TODO: add dataset size after rerunning notebook.
+- **Dataset size:** I do not list a fixed row count here because I have not rerun this older notebook after restructuring it.
 - **Known limitations:** The target is categorical, so regression is not the most natural final framing.
 
 ## Methods
@@ -23,7 +23,7 @@ The project demonstrates experimentation with preprocessing pipelines, feature e
 - Evaluated with mean squared error and R-squared.
 
 ## Results
-The notebook reports:
+My notebook reports:
 
 - Mean Squared Error: **0.05**
 - R-squared: **0.81**
@@ -31,12 +31,12 @@ The notebook reports:
 ## Key Insights
 - The dataset has strong predictive signal from passenger service ratings.
 - Regression can produce a reasonable numerical fit, but classification is a clearer formulation for this target.
-- This repo is best viewed as an intermediate experiment rather than the final airline satisfaction project.
+- I treat this repo as best viewed as an intermediate experiment rather than the final airline satisfaction project.
 
 ## Limitations
 - Regression is not ideal for a categorical satisfaction label.
-- The notebook does not yet include cross-validation.
-- The project overlaps with other airline satisfaction repos.
+- I do not yet include cross-validation.
+- I know this project overlaps with other airline satisfaction repos.
 - Results should be compared with the classification-based version before drawing conclusions.
 
 ## Future Improvements
