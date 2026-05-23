@@ -1,31 +1,56 @@
-Airline Satisfaction Prediction
+# Airline Satisfaction Regression Analysis
 
-This project predicts airline passenger satisfaction using machine learning. It handles both numerical and categorical features, applying One-Hot Encoding to categorical data and training a Random Forest Regressor.
+## Overview
+This project explores airline passenger satisfaction using a machine learning regression-style workflow. It loads survey data, preprocesses mixed categorical and numeric features, and evaluates a Random Forest regressor on a satisfaction target. This repository is preserved as an earlier modeling experiment related to the more polished airline satisfaction classification projects.
 
-Model Fitting
+## Motivation
+The project demonstrates experimentation with preprocessing pipelines, feature encoding, and model evaluation on tabular survey data. It is useful as a learning artifact because it shows the difference between framing satisfaction as a regression problem and framing it as classification.
 
-Load dataset and drop missing values.
+## Dataset
+- **Source:** Kaggle Airline Passenger Satisfaction dataset.
+- **File:** `data/airline_satisfaction.csv`
+- **Target variable:** `satisfaction`.
+- **Important features:** demographic fields, travel type, cabin class, flight distance, delay fields, and service ratings.
+- **Dataset size:** TODO: add dataset size after rerunning notebook.
+- **Known limitations:** The target is categorical, so regression is not the most natural final framing.
 
-Separate features (X) and target (y = satisfaction).
+## Methods
+- Loaded the airline satisfaction dataset.
+- Dropped missing values.
+- Split features and target.
+- Applied one-hot encoding to categorical variables.
+- Trained a Random Forest regressor.
+- Evaluated with mean squared error and R-squared.
 
-Split data into training and test sets (train_test_split).
+## Results
+The notebook reports:
 
-Preprocess data with ColumnTransformer:
+- Mean Squared Error: **0.05**
+- R-squared: **0.81**
 
-Pass numerical features as-is.
+## Key Insights
+- The dataset has strong predictive signal from passenger service ratings.
+- Regression can produce a reasonable numerical fit, but classification is a clearer formulation for this target.
+- This repo is best viewed as an intermediate experiment rather than the final airline satisfaction project.
 
-One-Hot Encode categorical features.
+## Limitations
+- Regression is not ideal for a categorical satisfaction label.
+- The notebook does not yet include cross-validation.
+- The project overlaps with other airline satisfaction repos.
+- Results should be compared with the classification-based version before drawing conclusions.
 
-Build a pipeline: Preprocessor → Random Forest Regressor.
+## Future Improvements
+- Convert the modeling objective fully to classification.
+- Add cross-validation and feature importance.
+- Link this repo clearly to the stronger airline satisfaction repos.
+- Consider archiving this repo after the best version is pinned.
 
-Train the model with model.fit(X_train, y_train).
-
-Prediction
-
-Prepare new data with all columns used in training.
-
-Make predictions using model.predict(new_data).
-
-Example output: Predicted satisfaction scores (continuous values).
-
-Note: Missing columns in new data will raise an error. Ensure all features from the training set are present.
+## How to Run
+```bash
+git clone https://github.com/BobbY-24/Airline-Satisfaction-Satisfaction-Prediction-Model---Data-Analysis-ML-Model-Fitting-.git
+cd Airline-Satisfaction-Satisfaction-Prediction-Model---Data-Analysis-ML-Model-Fitting-
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter notebook notebooks/airline_satisfaction_analysis.ipynb
+```
